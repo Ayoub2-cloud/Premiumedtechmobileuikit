@@ -25,7 +25,18 @@ public class NavigationService {
     
     public void navigateTo(String fxmlFile) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/" + fxmlFile));
+            // Remove leading slash if present
+            String path = fxmlFile;
+            if (path.startsWith("/")) {
+                path = path.substring(1);
+            }
+            
+            // Add .fxml extension if not present
+            if (!path.endsWith(".fxml")) {
+                path = path + ".fxml";
+            }
+            
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/" + path));
             Scene scene = new Scene(loader.load(), 1024, 768);
             
             String css = getClass().getResource("/styles/styles.css").toExternalForm();

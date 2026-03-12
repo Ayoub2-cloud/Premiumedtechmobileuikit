@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.est.attendance.controllers.LoginController"
+            style="-fx-background-color: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+    
+    <center>
+        <VBox alignment="CENTER" spacing="20" style="-fx-background-color: transparent;">
+            <padding>
+                <Insets top="50" right="50" bottom="50" left="50"/>
+            </padding>
+            
+            <!-- Title -->
+            <VBox alignment="CENTER" spacing="10">
+                <Label text="EST Smart Attendance System" 
+                       style="-fx-font-size: 32; -fx-font-weight: bold; -fx-text-fill: white;"/>
+                <Label text="Login to your account" 
+                       style="-fx-font-size: 14; -fx-text-fill: rgba(255,255,255,0.8);"/>
+            </VBox>
+            
+            <!-- Login Card -->
+            <VBox spacing="15" style="-fx-border-radius: 15; -fx-background-color: white; -fx-padding: 40;"
+                  maxWidth="400">
+                
+                <!-- Email Field -->
+                <VBox spacing="5">
+                    <Label text="Email Address" style="-fx-font-size: 12; -fx-text-fill: #333;"/>
+                    <TextField fx:id="emailField" 
+                               promptText="Enter your email"
+                               style="-fx-font-size: 14; -fx-padding: 10; -fx-border-radius: 5;"/>
+                </VBox>
+                
+                <!-- Password Field -->
+                <VBox spacing="5">
+                    <Label text="Password" style="-fx-font-size: 12; -fx-text-fill: #333;"/>
+                    <PasswordField fx:id="passwordField" 
+                                   promptText="Enter your password"
+                                   style="-fx-font-size: 14; -fx-padding: 10; -fx-border-radius: 5;"/>
+                </VBox>
+                
+                <!-- Role Selection -->
+                <VBox spacing="5">
+                    <Label text="Login as" style="-fx-font-size: 12; -fx-text-fill: #333;"/>
+                    <ComboBox fx:id="roleComboBox" 
+                              style="-fx-font-size: 14; -fx-padding: 10;"/>
+                </VBox>
+                
+                <!-- Login Button -->
+                <Button text="Login" 
+                        onAction="#handleLogin"
+                        style="-fx-font-size: 14; -fx-font-weight: bold; -fx-padding: 12; -fx-background-color: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -fx-text-fill: white; -fx-border-radius: 5; -fx-cursor: hand;"/>
+                
+                <!-- Demo Credentials -->
+                <VBox spacing="5" style="-fx-border-color: #e0e0e0; -fx-border-radius: 5; -fx-padding: 10; -fx-background-color: #f9f9f9;">
+                    <Label text="Demo Credentials:" style="-fx-font-weight: bold; -fx-font-size: 11;"/>
+                    <Label text="Student: ahmed@est.edu / password123" style="-fx-font-size: 10; -fx-text-fill: #666;"/>
+                    <Label text="Professor: hassan@est.edu / password123" style="-fx-font-size: 10; -fx-text-fill: #666;"/>
+                </VBox>
+            </VBox>
+        </VBox>
+    </center>
+</BorderPane>
